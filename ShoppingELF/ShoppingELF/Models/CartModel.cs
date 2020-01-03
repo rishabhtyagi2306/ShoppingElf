@@ -9,7 +9,7 @@ namespace ShoppingELF.Models
     {
         public int CartID { get; set; }
         public int UserID { get; set; }
-        public int PID { get; set; }
+        public Nullable<int> PID { get; set; }
         public int Quantity { get; set; }
 
         public virtual SizeModel SizeModel { get; set; }

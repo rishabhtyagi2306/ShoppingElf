@@ -82,7 +82,6 @@ C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\System.Net.Http.Formatting.
 C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\System.Web.Http.xml
 C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\System.Web.Http.WebHost.xml
 C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\obj\Debug\ShoppingELF.csproj.CoreCompileInputs.cache
 C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\obj\Debug\ShoppingELF.csproj.CopyComplete
 C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\obj\Debug\ShoppingELF.dll
 C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\obj\Debug\ShoppingELF.pdb
@@ -95,3 +94,8 @@ C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\System.Web.Cors.dll
 C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\System.Web.Http.Cors.dll
 C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\System.Web.Http.Cors.xml
 C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\obj\Debug\ShoppingELF.csprojAssemblyReference.cache
+C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\Antlr3.Runtime.dll
+C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\System.Web.Optimization.dll
+C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\WebGrease.dll
+C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\Antlr3.Runtime.pdb
+C:\Users\hp\source\repos\ShoppingELF\ShoppingELF\bin\System.Web.Optimization.xml

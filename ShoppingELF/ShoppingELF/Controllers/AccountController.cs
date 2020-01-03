@@ -209,7 +209,7 @@ namespace ShoppingELF.Controllers
         {
             var verifyUrl = "/api/" + EmailFor + "/" + ActivationCode;
             //var link = Request.RequestUri.AbsoluteUri.Replace(Request.RequestUri.PathAndQuery, verifyUrl);
-            var link = "https://37778f58.ngrok.io/api/" + EmailFor + "/" + ActivationCode;
+            var link = "https://b6fc7ab9.ngrok.io/api/" + EmailFor + "/" + ActivationCode;
             var FromEmail = new MailAddress("4as1827000224@gmail.com", "ShoppingELF");
             var ToEmail = new MailAddress(Email);
             var FromEmailPassword = "Rishabh@2306";

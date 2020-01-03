@@ -216,6 +216,12 @@ namespace ShoppingELF.Models
                 var size = context.SizeTable.FirstOrDefault(x => x.PID == pid);
                 if (size != null)
                 {
+                    var order = context.CartTable.FirstOrDefault(x => x.PID == pid);
+                    if(order != null)
+                    {
+                        context.CartTable.Remove(order);
+                        context.SaveChanges();
+                    }
                     context.SizeTable.Remove(size);
                     context.SaveChanges();
                     return true;
@@ -231,8 +237,14 @@ namespace ShoppingELF.Models
             {
                 var size = context.SizeTable.Where(x => x.ProductID == pid).ToList();
                 var product = context.ProductTable.FirstOrDefault(x => x.ProductID == pid);
+                var cart = context.CartTable.FirstOrDefault(x => x.PID == pid);
                 if (size != null && product != null)
                 {
+                    if(cart != null)
+                    {
+                        context.CartTable.Remove(cart);
+                        context.SaveChanges();
+                    }
                     foreach (var i in size)
                         context.SizeTable.Remove(i);
                     context.SaveChanges();

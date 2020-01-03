@@ -284,14 +284,14 @@ namespace ShoppingELF.Controllers
                             var postedFile = httpRequest.Files[file];
                             if (postedFile != null && postedFile.ContentLength > 0)
                             {
-                                IList<string> AllowedFileExtensions = new List<string> { ".jpg", ".gif", ".png" };
+                                IList<string> AllowedFileExtensions = new List<string> { ".jpg", ".gif", ".png", ".jpeg" };
                                 var ext = postedFile.FileName.Substring(postedFile.FileName.LastIndexOf('.'));
                                 var extension = ext.ToLower();
                                 if (!AllowedFileExtensions.Contains(extension))
                                 {
                                     var message = string.Format("Please Upload image of type .jpg,.gif,.png.");
                                     dict.Add("error", message);
-                                    return BadRequest();
+                                    return BadRequest("Please Upload image of type .jpg,.gif,.png.,.jpeg");
                                 }
                                 else
                                 {

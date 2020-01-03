@@ -11,8 +11,7 @@ namespace ShoppingELF
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class UserTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,21 +22,10 @@ namespace ShoppingELF
             this.OrderTable = new HashSet<OrderTable>();
         }
     
-        [Required]
         public int UserID { get; set; }
-
-        [Required]
         public string yourName { get; set; }
-
-        [EmailAddress]
         public string email { get; set; }
-
-        [Required]
-        [MinLength(10, ErrorMessage = "Please enter a valid Phone Number")]
         public string phoneNumber { get; set; }
-
-        [Required]
-        [RegularExpression("^((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])).{7,}$", ErrorMessage = "Password must be atleast 7 characters long with Atleast one capital letter,Number and Special symbol (e.g. !@#$%^&*)")]
         public string password { get; set; }
         public Nullable<System.Guid> ActivationCode { get; set; }
         public Nullable<bool> IsEmailVerified { get; set; }

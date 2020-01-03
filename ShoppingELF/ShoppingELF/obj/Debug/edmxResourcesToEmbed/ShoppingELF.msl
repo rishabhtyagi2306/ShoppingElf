@@ -51,10 +51,10 @@
     <EntitySetMapping Name="ProductTable">
       <EntityTypeMapping TypeName="ShoppingELFModel.ProductTable">
         <MappingFragment StoreEntitySet="ProductTable">
-          <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="productName" ColumnName="productName" />
           <ScalarProperty Name="productBrand" ColumnName="productBrand" />
+          <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="productDetails" ColumnName="productDetails" />
           <ScalarProperty Name="picture1" ColumnName="picture1" />
           <ScalarProperty Name="picture2" ColumnName="picture2" />
@@ -89,8 +89,6 @@
     <EntitySetMapping Name="SellerTable">
       <EntityTypeMapping TypeName="ShoppingELFModel.SellerTable">
         <MappingFragment StoreEntitySet="SellerTable">
-          <ScalarProperty Name="OTPSentTIme" ColumnName="OTPSentTIme" />
-          <ScalarProperty Name="IsAccountVerified" ColumnName="IsAccountVerified" />
           <ScalarProperty Name="SellerID" ColumnName="SellerID" />
           <ScalarProperty Name="yourName" ColumnName="yourName" />
           <ScalarProperty Name="mobileNumber" ColumnName="mobileNumber" />
@@ -98,6 +96,8 @@
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="Role" ColumnName="Role" />
           <ScalarProperty Name="OTP" ColumnName="OTP" />
+          <ScalarProperty Name="IsAccountVerified" ColumnName="IsAccountVerified" />
+          <ScalarProperty Name="OTPSentTIme" ColumnName="OTPSentTIme" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -115,16 +115,16 @@
     <EntitySetMapping Name="SoldTable">
       <EntityTypeMapping TypeName="ShoppingELFModel.SoldTable">
         <MappingFragment StoreEntitySet="SoldTable">
-          <ScalarProperty Name="PID" ColumnName="PID" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="productPicture" ColumnName="productPicture" />
-          <ScalarProperty Name="productSize" ColumnName="productSize" />
           <ScalarProperty Name="SoldID" ColumnName="SoldID" />
           <ScalarProperty Name="SellerID" ColumnName="SellerID" />
           <ScalarProperty Name="productName" ColumnName="productName" />
           <ScalarProperty Name="productBrand" ColumnName="productBrand" />
           <ScalarProperty Name="productPrice" ColumnName="productPrice" />
           <ScalarProperty Name="productQuantity" ColumnName="productQuantity" />
+          <ScalarProperty Name="productSize" ColumnName="productSize" />
+          <ScalarProperty Name="productPicture" ColumnName="productPicture" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

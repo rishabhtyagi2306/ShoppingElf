@@ -23,6 +23,7 @@ namespace ShoppingELF
         public int ProductID { get; set; }
         public string productName { get; set; }
         public string productBrand { get; set; }
+        public Nullable<int> price { get; set; }
         public string productDetails { get; set; }
         public string picture1 { get; set; }
         public string picture2 { get; set; }
@@ -31,7 +32,6 @@ namespace ShoppingELF
         public int SubCategoryID { get; set; }
         public int SellerID { get; set; }
         public int SuitableID { get; set; }
-        public Nullable<int> price { get; set; }
     
         public virtual SellerTable SellerTable { get; set; }
         public virtual SubCategoryTable SubCategoryTable { get; set; }

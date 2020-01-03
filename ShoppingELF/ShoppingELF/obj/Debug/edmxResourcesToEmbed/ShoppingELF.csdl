@@ -19,7 +19,7 @@
     </Key>
     <Property Name="CartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserID" Type="Int32" Nullable="false" />
-    <Property Name="PID" Type="Int32" Nullable="false" />
+    <Property Name="PID" Type="Int32" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <NavigationProperty Name="SizeTable" Relationship="Self.FK_CartTable_SizeTable" FromRole="CartTable" ToRole="SizeTable" />
     <NavigationProperty Name="UserTable" Relationship="Self.FK_CartTable_UserTable" FromRole="CartTable" ToRole="UserTable" />
@@ -46,8 +46,7 @@
     <Property Name="productSize" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="productQuantity" Type="Int32" Nullable="false" />
     <Property Name="productPicture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="SizeTable" Relationship="Self.FK_OrderTable_SizeTable" FromRole="OrderTable" ToRole="SizeTable" />
+    <Property Name="PID" Type="Int32" />
     <NavigationProperty Name="UserTable" Relationship="Self.FK_OrderTable_UserTable" FromRole="OrderTable" ToRole="UserTable" />
   </EntityType>
   <EntityType Name="ProductTable">
@@ -57,6 +56,7 @@
     <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="productName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="productBrand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Int32" />
     <Property Name="productDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="picture1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="picture2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -69,7 +69,6 @@
     <NavigationProperty Name="SubCategoryTable" Relationship="Self.FK_ProductTable_SubCategoryTable" FromRole="ProductTable" ToRole="SubCategoryTable" />
     <NavigationProperty Name="SuitableForTable" Relationship="Self.FK_ProductTable_SuitableForTable" FromRole="ProductTable" ToRole="SuitableForTable" />
     <NavigationProperty Name="SizeTable" Relationship="Self.FK_SizeTable_ProductTable" FromRole="ProductTable" ToRole="SizeTable" />
-    <Property Name="price" Type="Int32" />
   </EntityType>
   <EntityType Name="SellerDetailsTable">
     <Key>
@@ -77,7 +76,7 @@
     </Key>
     <Property Name="SellerDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="AddressLine1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="AddressLine2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AddressLine2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="pincode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -102,11 +101,11 @@
     <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Role" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="OTP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAccountVerified" Type="Boolean" />
+    <Property Name="OTPSentTIme" Type="Int32" />
     <NavigationProperty Name="ProductTable" Relationship="Self.FK_ProductTable_SellerTable" FromRole="SellerTable" ToRole="ProductTable" />
     <NavigationProperty Name="SellerDetailsTable" Relationship="Self.FK_SellerDetailsTable_SellerTable" FromRole="SellerTable" ToRole="SellerDetailsTable" />
     <NavigationProperty Name="SoldTable" Relationship="Self.FK_SoldTable_SoldTable" FromRole="SellerTable" ToRole="SoldTable" />
-    <Property Name="IsAccountVerified" Type="Boolean" />
-    <Property Name="OTPSentTIme" Type="Int32" />
   </EntityType>
   <EntityType Name="SizeTable">
     <Key>
@@ -118,9 +117,7 @@
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <Property Name="productPrice" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CartTable" Relationship="Self.FK_CartTable_SizeTable" FromRole="SizeTable" ToRole="CartTable" />
-    <NavigationProperty Name="OrderTable" Relationship="Self.FK_OrderTable_SizeTable" FromRole="SizeTable" ToRole="OrderTable" />
     <NavigationProperty Name="ProductTable" Relationship="Self.FK_SizeTable_ProductTable" FromRole="SizeTable" ToRole="ProductTable" />
-    <NavigationProperty Name="SoldTable" Relationship="ShoppingELFModel.FK_SoldTable_SizeTable" FromRole="SizeTable" ToRole="SoldTable" />
   </EntityType>
   <EntityType Name="SoldTable">
     <Key>
@@ -132,12 +129,11 @@
     <Property Name="productBrand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="productPrice" Type="Int32" Nullable="false" />
     <Property Name="productQuantity" Type="Int32" Nullable="false" />
+    <Property Name="productSize" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="productPicture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PID" Type="Int32" />
     <NavigationProperty Name="SellerTable" Relationship="Self.FK_SoldTable_SoldTable" FromRole="SoldTable" ToRole="SellerTable" />
-    <Property Name="productSize" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="productPicture" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="PID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="SizeTable" Relationship="ShoppingELFModel.FK_SoldTable_SizeTable" FromRole="SoldTable" ToRole="SizeTable" />
   </EntityType>
   <EntityType Name="SubCategoryTable">
     <Key>
@@ -190,7 +186,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CartTable_SizeTable">
-    <End Role="SizeTable" Type="Self.SizeTable" Multiplicity="1" />
+    <End Role="SizeTable" Type="Self.SizeTable" Multiplicity="0..1" />
     <End Role="CartTable" Type="Self.CartTable" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SizeTable">
@@ -234,18 +230,6 @@
       </Principal>
       <Dependent Role="SubCategoryTable">
         <PropertyRef Name="CategoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_OrderTable_SizeTable">
-    <End Role="SizeTable" Type="Self.SizeTable" Multiplicity="1" />
-    <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SizeTable">
-        <PropertyRef Name="PID" />
-      </Principal>
-      <Dependent Role="OrderTable">
-        <PropertyRef Name="PID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -366,10 +350,6 @@
       <End Role="CategoryTable" EntitySet="CategoryTable" />
       <End Role="SubCategoryTable" EntitySet="SubCategoryTable" />
     </AssociationSet>
-    <AssociationSet Name="FK_OrderTable_SizeTable" Association="Self.FK_OrderTable_SizeTable">
-      <End Role="SizeTable" EntitySet="SizeTable" />
-      <End Role="OrderTable" EntitySet="OrderTable" />
-    </AssociationSet>
     <AssociationSet Name="FK_OrderTable_UserTable" Association="Self.FK_OrderTable_UserTable">
       <End Role="UserTable" EntitySet="UserTable" />
       <End Role="OrderTable" EntitySet="OrderTable" />
@@ -398,21 +378,5 @@
       <End Role="SellerTable" EntitySet="SellerTable" />
       <End Role="SoldTable" EntitySet="SoldTable" />
     </AssociationSet>
-    <AssociationSet Name="FK_SoldTable_SizeTable" Association="ShoppingELFModel.FK_SoldTable_SizeTable">
-      <End Role="SizeTable" EntitySet="SizeTable" />
-      <End Role="SoldTable" EntitySet="SoldTable" />
-    </AssociationSet>
   </EntityContainer>
-  <Association Name="FK_SoldTable_SizeTable">
-    <End Type="ShoppingELFModel.SizeTable" Role="SizeTable" Multiplicity="1" />
-    <End Type="ShoppingELFModel.SoldTable" Role="SoldTable" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SizeTable">
-        <PropertyRef Name="PID" />
-      </Principal>
-      <Dependent Role="SoldTable">
-        <PropertyRef Name="PID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

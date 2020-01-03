@@ -18,8 +18,6 @@ namespace ShoppingELF
         public SizeTable()
         {
             this.CartTable = new HashSet<CartTable>();
-            this.OrderTable = new HashSet<OrderTable>();
-            this.SoldTable = new HashSet<SoldTable>();
         }
     
         public int PID { get; set; }
@@ -30,10 +28,6 @@ namespace ShoppingELF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CartTable> CartTable { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderTable> OrderTable { get; set; }
         public virtual ProductTable ProductTable { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SoldTable> SoldTable { get; set; }
     }
 }
