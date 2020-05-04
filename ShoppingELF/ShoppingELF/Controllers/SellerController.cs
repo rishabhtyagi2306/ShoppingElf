@@ -244,7 +244,7 @@ namespace ShoppingELF.Controllers
             {
                 var FromEmail = new MailAddress("4as1827000224@gmail.com", "ShoppingELF");
                 var ToEmail = new MailAddress(Email);
-                var FromEmailPassword = "Rishabh@2306";
+                var FromEmailPassword = "*************";
                 string Subject = "";
                 string Body = "";
                 if (EmailFor == "Account")

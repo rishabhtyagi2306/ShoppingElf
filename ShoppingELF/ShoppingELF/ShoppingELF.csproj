@@ -255,6 +255,7 @@
     <Content Include="ShoppingELF.edmx.diagram">
       <DependentUpon>ShoppingELF.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
