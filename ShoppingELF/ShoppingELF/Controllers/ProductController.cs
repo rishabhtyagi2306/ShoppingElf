@@ -266,7 +266,7 @@ namespace ShoppingELF.Controllers
         [Route("api/UploadImage/{pid}/{picimg}")]
         public IHttpActionResult PostUserImage(int pid, int picimg, string token)
         {
-            using(ShoppingELFEntities context = new ShoppingELFEntities())
+            using (ShoppingELFEntities context = new ShoppingELFEntities())
             {
                 SellerTable seller = new SellerTable();
                 string username = TokenManager.ValidateToken(token);
@@ -276,7 +276,7 @@ namespace ShoppingELF.Controllers
                     Dictionary<string, object> dict = new Dictionary<string, object>();
                     try
                     {
-                        
+
                         var httpRequest = HttpContext.Current.Request;
                         foreach (string file in httpRequest.Files)
                         {
@@ -303,13 +303,13 @@ namespace ShoppingELF.Controllers
                                         return NotFound();
                                     if (image == 0)
                                         return BadRequest("Your image might be greater than the 1mb ,please upload a valid image");
-                                       
+
 
                                 }
                             }
 
                             var message1 = "/ProductImage/" + postedFile.FileName;
-                            return Ok(message1); 
+                            return Ok(message1);
                         }
                         var res = string.Format("Please Upload a image.");
                         dict.Add("error", res);

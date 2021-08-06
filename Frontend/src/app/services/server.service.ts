@@ -16,7 +16,7 @@ export class ServerService
   tk:any;
   Products:Product[];
   body:{}; 
-  public rootUrl="https://b6fc7ab9.ngrok.io"
+  public rootUrl="https://cb47b78c3e75.ngrok.io"
   
 
 

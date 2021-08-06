@@ -237,14 +237,11 @@ namespace ShoppingELF.Controllers
         [NonAction]
         public void EmailVerification(int UserID, string Email, string OTP, string EmailFor = "Account")
         {
-            //var verifyUrl = "/api/" + EmailFor + "/" + ActivationCode;
-            //var link = Request.RequestUri.AbsoluteUri.Replace(Request.RequestUri.PathAndQuery, verifyUrl);
-            //var link = "http://localhost:54039/api/" + EmailFor + "/" + ActivationCode;
             try
             {
-                var FromEmail = new MailAddress("4as1827000224@gmail.com", "ShoppingELF");
+                var FromEmail = new MailAddress(Keys.getEmail(), "ShoppingELF");
                 var ToEmail = new MailAddress(Email);
-                var FromEmailPassword = "*************";
+                var FromEmailPassword = Keys.getPassword();
                 string Subject = "";
                 string Body = "";
                 if (EmailFor == "Account")
@@ -253,11 +250,6 @@ namespace ShoppingELF.Controllers
                     Body = "<br/>Never Share your OTP with others <br/>Enter this OTP " + OTP + " to verify your account if it was not you then ignore this message <br/>Team ShoppingELF <br/> Thank you!";
 
                 }
-                //else if (EmailFor == "ResetPassword")
-                //{
-                //    Subject = "Reset Password";
-                //    Body = "Hi,<br/><br/>Forgot your password , Don't worry click on the link below to reset your password<br/><br/><a href= '" + link + "'>" + link + "<a/>";
-                //}
 
                 SmtpClient smtp = new SmtpClient()
                 {

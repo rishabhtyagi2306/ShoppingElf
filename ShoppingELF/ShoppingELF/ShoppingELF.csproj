@@ -166,7 +166,6 @@
     <Compile Include="AddressTable.cs">
       <DependentUpon>ShoppingELF.tt</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -188,6 +187,7 @@
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\Crypto.cs" />
+    <Compile Include="Models\Keys.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ProductRepository.cs" />
@@ -255,7 +255,7 @@
     <Content Include="ShoppingELF.edmx.diagram">
       <DependentUpon>ShoppingELF.edmx</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\ShoppingELF - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
